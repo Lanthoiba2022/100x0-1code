@@ -1,21 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import { RevenueCard } from './components/RevenueCard'
-import { TopBar } from './components/TopBar'
+import OverView from './components/Overview'
+import SideBar from './components/SideBar'
+import Table from './components/Table'
+import  TopBar  from './components/TopBar'
+import Transaction from './components/Transaction'
+
 
 function App() {
   return (
-    <>
-    <TopBar/>
-    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        <RevenueCard/>
-        <RevenueCard/>
-        <RevenueCard/>
-    </div>
+    <div className="bg-white-800">
+      <SideBar/>
+
+      <div className="sm:ml-64 border-b border-black-150 pl-4 bg-white-500">
+          <TopBar />
+      </div>
+
+      <div className=" m-5 mb-0 sm:ml-64 grid gap-8">
+        <OverView />
+        <div className="grid gap-6">
+          <Transaction />
+          <Table/>
+        </div>
+      </div>
       
-    </>
+    </div>
   )
 }
 
